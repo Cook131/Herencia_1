@@ -9,15 +9,13 @@ using namespace std;
 
 int main()
 {
-    Punto p(5, 8);
-    p.imprimePunto();
 
-    p.setX(0);
-    p.setY(0);
-    p.imprimePunto();
-
-    p.setX(100);
-    cout << p.getX()<< endl;
+    Punto p1(3,7);
+    Punto p2(5,8);
+    Punto p3(3, 9);
+    list<Punto> l = {p1, p2, p3};
+    Figura f("Triangulo", 3, l );
+    f.imprimeFigura();
 
     return 0;
 }
