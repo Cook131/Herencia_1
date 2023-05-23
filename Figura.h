@@ -43,13 +43,13 @@ void Figura::imprimeFigura()
     
     list <Punto> listaOrdenada (listaPuntos);
             
-    listaOrdenada.sort([] (Punto objeto1, Punto objeto2){
-        if (objeto1.getX() == objeto2.getX())
+    listaOrdenada.sort([] (Punto punto1, Punto punto2){
+        if (punto1.getX() == punto2.getX())
         {
-            return objeto1.getY() < objeto2.getY();
+            return punto1.getY() < punto2.getY();
         } else 
         {
-        return objeto1.getX() < objeto2.getX();
+        return punto1.getX() < punto2.getX();
         }
     });
     cout << "Puntos: " << endl;
