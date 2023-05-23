@@ -17,9 +17,9 @@ class Figura
     int lengthList;
     string nombre;
     public:
-        Figura()=default;
+        Figura() = default;
         Figura(string nombre, int lengthList): nombre(nombre), lengthList(lengthList){};
-        Figura(string nombre, int lengthPunto, list<Punto> listaPuntos): nombre(nombre), lengthList(lengthList), listaPuntos(listaPuntos){};
+        Figura(string nombre, int lengthList, list<Punto> listaPuntos): nombre(nombre), lengthList(lengthList), listaPuntos(listaPuntos){};
         Figura(const Figura &f): nombre(f.nombre), lengthList(f.lengthList), listaPuntos(f.listaPuntos){};
         ~Figura(){};
         
@@ -37,10 +37,28 @@ class Figura
 
 void Figura::imprimeFigura()
 {
+    cout << "- - - - - - - - - - - -" << endl;
     cout  <<"Nombre de la figura: "<< nombre << endl;
     cout <<"Cantidad de vectores: "<< lengthList << endl;
     
-    //list<Punto> ordenadosPuntos = listaPuntos;
-
+    list <Punto> listaOrdenada (listaPuntos);
+            
+    listaOrdenada.sort([] (Punto objeto1, Punto objeto2){
+        if (objeto1.getX() == objeto2.getX())
+        {
+            return objeto1.getY() < objeto2.getY();
+        } else 
+        {
+        return objeto1.getX() < objeto2.getX();
+        }
+    });
+    cout << "Puntos: " << endl;
+    for ( auto obj : listaOrdenada) 
+    {
+        int x = obj.getX();
+        int y = obj.getY();
+        cout << "(" << x << ',' << y << ")" << endl;
+    }
+    cout << "- - - - - - - - - - - -" << endl;
     
 }
