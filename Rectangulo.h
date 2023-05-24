@@ -21,7 +21,7 @@ class Rectangulo: public Figura
 
     int calcularArea();
     int calcularPerimetro();
-    void imprimeFigura() override{};
+    //void imprimeFigura() override{};
 };
 
 int Rectangulo::calcularArea()
