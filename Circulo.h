@@ -11,6 +11,7 @@ using namespace std;
 
 
 class Circulo: public Figura
+//public inheritance of "Figura" methods
 {
     string nombre = "Circulo";
     int lengthLista = 2;
