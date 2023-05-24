@@ -21,20 +21,27 @@ class Figura
 
     int lengthList;
     string nombre;
+    //private variables 
     public:
         Figura()=default;
         Figura(string nombre, int lengthList): nombre(nombre), lengthList(lengthList){};
+        //non-listed constructor
         Figura(string nombre, int lengthList, list<Punto> lpuntos): nombre(nombre), lengthList(lengthList), lpuntos(lpuntos){};
+        //constructor with list input
         Figura(const Figura &f): nombre(f.nombre), lengthList(f.lengthList), lpuntos(f.lpuntos){};
+        //copy constructor
         ~Figura(){};
         
         void setPunto(Punto p){lpuntos.push_front(p);}
+        //set of a single point in front of "Punto"'s list
         void setNombre(string nombre){ this->nombre=nombre; }
         void setLengthList(int lengthList){ this->lengthList=lengthList; }
+        //normal input setters
 
         list<Punto> getPuntos(){ return lpuntos; } 
         string getNombre(){ return nombre; }
         int getLengthList(){ return lengthList; }
+        //normal getters
         
         int calcularDistancia(Punto, Punto);
         virtual void imprimeFigura();
@@ -72,4 +79,5 @@ int Figura::calcularDistancia(Punto p1, Punto p2)
 {
     int distancia = sqrt( pow((p2.getX()-p1.getX()),2) + pow((p2.getY()-p1.getY()),2) );
     return distancia;
+    //pythagorean theorem used to calculate imaginary asitas between each vertex
 }
