@@ -55,18 +55,24 @@ void Figura::imprimeFigura()
     cout <<"Cantidad de vectores: "<< lengthList << endl;
     
     list <Punto> listaOrdenada (lpuntos);
+    //Creation of a new list where the list of points already created is assigned (makes a copy)
             
     listaOrdenada.sort([] (Punto punto1, Punto punto2){
+    //With the help of the sort function <list> sort the objects
         if (punto1.getX() == punto2.getX())
+        // Get X and check if they are equal
         {
             return punto1.getY() < punto2.getY();
+            //If so, return if Y of "punto1" is less
         } else 
         {
         return punto1.getX() < punto2.getX();
+        //Get the X attributes and check which one is smaller
         }
     });
     cout << "Puntos: " << endl;
     for ( auto obj : listaOrdenada) 
+    // We print the objects of the already ordered list
     {
         int x = obj.getX();
         int y = obj.getY();
