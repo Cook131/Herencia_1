@@ -13,9 +13,6 @@
 
 using namespace std;
 
-void imprime_clase(Figura &figura){ figura.imprimeFigura(); }                   //Caro q es esto?
-
-
 int main()
 {
     Punto p1(3,7);
