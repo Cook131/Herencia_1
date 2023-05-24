@@ -1,3 +1,7 @@
+//Ejercicio Herencia (Rectangulo), Lunes 22/05/23
+// Jorge Luis Nájera Espinosa - A01424106
+// Andrea Carolina Figueroa Orihuela - A01424250
+
 #include <iostream>
 #include <string>
 #include <cmath>
