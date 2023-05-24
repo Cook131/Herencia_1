@@ -47,8 +47,11 @@ int Rectangulo::calcularArea()
     r.pop_front();
     Punto p4 = r.front();
     r.pop_front();
+    //construction and destruction of list in this function in order to get "Puntos" out 
 
     area = calcularDistancia(p1,p2) * calcularDistancia(p2,p3);
+    //Function of "Figura"
+    //formula of Square area
     return area;
 }
 
@@ -66,5 +69,6 @@ int Rectangulo::calcularPerimetro()
     r.pop_front();
 
     perimetro = 2 * (calcularDistancia(p1,p2) + calcularDistancia(p2,p3));
+    //formula of square perimeter
     return perimetro;
 }
