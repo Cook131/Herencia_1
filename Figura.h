@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <cmath>
 #include "Punto.h"
 
 using namespace std;
@@ -12,25 +13,26 @@ using namespace std;
 
 class Figura
 {
-    list<Punto> listaPuntos;
+    list<Punto> lpuntos;
 
     int lengthList;
     string nombre;
     public:
-        Figura() = default;
+        Figura()=default;
         Figura(string nombre, int lengthList): nombre(nombre), lengthList(lengthList){};
-        Figura(string nombre, int lengthList, list<Punto> listaPuntos): nombre(nombre), lengthList(lengthList), listaPuntos(listaPuntos){};
-        Figura(const Figura &f): nombre(f.nombre), lengthList(f.lengthList), listaPuntos(f.listaPuntos){};
+        Figura(string nombre, int lengthList, list<Punto> lpuntos): nombre(nombre), lengthList(lengthList), lpuntos(lpuntos){};
+        Figura(const Figura &f): nombre(f.nombre), lengthList(f.lengthList), lpuntos(f.lpuntos){};
         ~Figura(){};
         
-        void setPunto(Punto p){listaPuntos.push_front(p);}
+        void setPunto(Punto p){lpuntos.push_front(p);}
         void setNombre(string nombre){ this->nombre=nombre; }
         void setLengthList(int lengthList){ this->lengthList=lengthList; }
 
-        list<Punto> getPuntos(){ return listaPuntos; } 
+        list<Punto> getPuntos(){ return lpuntos; } 
         string getNombre(){ return nombre; }
         int getLengthList(){ return lengthList; }
         
+        int calcularDistancia(Punto, Punto);
         virtual void imprimeFigura();
 
 };
@@ -41,7 +43,7 @@ void Figura::imprimeFigura()
     cout  <<"Nombre de la figura: "<< nombre << endl;
     cout <<"Cantidad de vectores: "<< lengthList << endl;
     
-    list <Punto> listaOrdenada (listaPuntos);
+    list <Punto> listaOrdenada (lpuntos);
             
     listaOrdenada.sort([] (Punto punto1, Punto punto2){
         if (punto1.getX() == punto2.getX())
@@ -59,6 +61,11 @@ void Figura::imprimeFigura()
         int y = obj.getY();
         cout << "(" << x << ',' << y << ")" << endl;
     }
-    cout << "- - - - - - - - - - - -" << endl;
     
+}
+
+int Figura::calcularDistancia(Punto p1, Punto p2)
+{
+    int distancia = sqrt( pow((p2.getX()-p1.getX()),2) + pow((p2.getY()-p1.getY()),2) );
+    return distancia;
 }
