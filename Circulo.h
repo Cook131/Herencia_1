@@ -21,7 +21,7 @@ class Circulo: public Figura
 
     int calcularArea();
     int calcularPerimetro();
-    void imprimeFigura() override{};
+    //void imprimeFigura() override{};
 };
 
 int Circulo::calcularArea()
