@@ -1,4 +1,4 @@
-//Ejercicio Herencia, Lunes 22/05/23
+//Ejercicio Herencia (Figura Base), Lunes 22/05/23
 // Jorge Luis Nájera Espinosa - A01424106
 // Andrea Carolina Figueroa Orihuela - A01424250
 
@@ -6,10 +6,14 @@
 #include <string>
 #include <list>
 #include <cmath>
+//system inclusions
+
 #include "Punto.h"
+//class inclusion
 
 using namespace std;
 #pragma once
+//more than one use
 
 class Figura
 {
