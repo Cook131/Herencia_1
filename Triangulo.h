@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "Figura.h"
+//system inclussions
+
 
 
 class Triangulo: public Figura
