@@ -1,4 +1,4 @@
-//Ejercicio Herencia, Lunes 22/05/23
+//Ejercicio Herencia (Vertice o Punto), Lunes 22/05/23
 // Jorge Luis Nájera Espinosa - A01424106
 // Andrea Carolina Figueroa Orihuela - A01424250
 
@@ -11,25 +11,26 @@ using namespace std;
 
 class Punto
 {
-    double x, y; //Atributos que componen a Punto (coordenadas)
+    double x, y; //Attributes that make up a Point (coordinates)
 
     public:
-        Punto(double x, double y): x(x), y(y){}; //Constructor que recibe ambos atributos (x,y)
-        Punto(const Punto &p): x(p.x), y(p.y){}; //Constructor copia de Punto
-        Punto()=default; //Contructor default
-        Punto(double x): x(x), y(0){}; //Contructor que recibe el atributo x y por define y = 0;
+        Punto(double x, double y): x(x), y(y){}; //Input Constructor
+        Punto(const Punto &p): x(p.x), y(p.y){}; //Copy Constructor
+        Punto()=default; //Constructor default
+        Punto(double x): x(x), y(0){}; //Constructor that reiceves only x, y is always at 0 (no elevation)
 
-        void setX(double x){ this->x=x; } // Setter de atributos de Punto
+        void setX(double x){ this->x=x; }
         void setY(double y){ this->y=y; }
-        double getX(){ return x; } //Getters de atributos de Punto
+        // normal getters
+        double getX(){ return x; }
         double getY(){ return y; }
-
+        //normal getters
         
-        void imprimePunto(); //Firma de metodo para mostrar datos de Punto
+        void imprimePunto(); 
 };
 
 
 void Punto::imprimePunto()
 {
-    cout<<"Las coordenadas son: ("<< x << "," << y <<")"<<endl; //Impresion de x y y
+    cout<<"Las coordenadas son: ("<< x << "," << y <<")"<<endl; //X and Y prints
 }
