@@ -6,8 +6,7 @@
 #include <string>
 #include <cmath>
 //system inclussions
-#include "Figura.h"
-//class inclussion
+
 
 using namespace std;
 
