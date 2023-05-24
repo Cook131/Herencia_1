@@ -1,4 +1,4 @@
-//Ejercicio Herencia, Lunes 22/05/23
+//Ejercicio Herencia (Circulo), Lunes 22/05/23
 // Jorge Luis Nájera Espinosa - A01424106
 // Andrea Carolina Figueroa Orihuela - A01424250
 
